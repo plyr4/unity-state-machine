@@ -19,7 +19,7 @@ public abstract class StateBase : IState
         {
             GenericEventOpts opts = new GenericEventOpts
             {
-                _newState = this
+                // _newState = this
             };
             _context._onStateChangeEvent.Invoke(opts);
         }
