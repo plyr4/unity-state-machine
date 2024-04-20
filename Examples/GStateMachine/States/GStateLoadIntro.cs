@@ -23,7 +23,7 @@ public class GStateLoadIntro : GStateBase
 
         if (_context == null) return;
 
-        ScreenTransition.Instance.DelayedOpen(1f);
+        // ScreenTransition.Instance.DelayedOpen(1f);
         
         _context._loadIntroDone = false;
     }

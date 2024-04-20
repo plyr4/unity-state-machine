@@ -12,7 +12,7 @@ public class GStateRetryIn : GStateBase
 
         _context._retryInDone = false;
 
-        ScreenTransition.Instance.Close();
+        // ScreenTransition.Instance.Close();
     }
     
     public override void OnExit()

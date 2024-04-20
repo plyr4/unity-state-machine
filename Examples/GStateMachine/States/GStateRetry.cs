@@ -27,7 +27,7 @@ public class GStateRetry : GStateBase
         {
             SceneManager.LoadScene("Play", LoadSceneMode.Additive);
         
-            ScreenTransition.Instance.DelayedOpen(1f);   
+            // ScreenTransition.Instance.DelayedOpen(1f);   
         }
     }
 
@@ -36,7 +36,7 @@ public class GStateRetry : GStateBase
         SceneManager.UnloadSceneAsync("Play");
         yield return new WaitForSecondsRealtime(2f);
         SceneManager.LoadScene("Play", LoadSceneMode.Additive);
-        ScreenTransition.Instance.DelayedOpen(1f);  
+        // ScreenTransition.Instance.DelayedOpen(1f);  
     }
     
     public override void OnExit()

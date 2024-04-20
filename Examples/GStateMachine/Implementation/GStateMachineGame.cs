@@ -178,7 +178,7 @@ public class GStateMachineGame : GStateMachineMono
 
     public void HandleStartMenuQuit(GenericEventOpts opts)
     {
-        ScreenTransition.Instance.Close();
+        // ScreenTransition.Instance.Close();
     }
 
     public void HandleGameOverRetry(GenericEventOpts opts)
@@ -188,7 +188,7 @@ public class GStateMachineGame : GStateMachineMono
 
     public void HandleGameOverQuit(GenericEventOpts opts)
     {
-        ScreenTransition.Instance.Close();
+        // ScreenTransition.Instance.Close();
     }
 
     public void HandleGameOverWin(GenericEventOpts opts)

@@ -13,7 +13,7 @@ public class GStatePauseQuit : GStateBase
         if (_context == null) return;
 
         Time.timeScale = 1f;
-        ScreenTransition.Instance.Close();
+        // ScreenTransition.Instance.Close();
         _context._pauseQuit = false;
     }
 

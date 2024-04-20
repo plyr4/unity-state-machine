@@ -12,7 +12,7 @@ public class GStateStartOut : GStateBase
 
         _context._startOnPlay = false;
 
-        ScreenTransition.Instance.Close();
+        // ScreenTransition.Instance.Close();
     }
 
     public override void OnExit()
