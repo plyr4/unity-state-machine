@@ -59,7 +59,6 @@ public class GStateMachineGame : GStateMachineMono
             _introDone
         ));
 
-
         at(loadPlay, play, new FuncPredicate(() =>
             _loadPlayDone
         ));
@@ -96,8 +95,6 @@ public class GStateMachineGame : GStateMachineMono
             _gameOver
         ));
 
- 
-
         _stateMachine.SetState(nan);
     }
 
@@ -130,16 +127,6 @@ public class GStateMachineGame : GStateMachineMono
                 break; 
             case GStatePauseQuit:
             case GStateGameOver:
-                // if (opts._isGameOverQuit)
-                // {
-                //     _gameOverQuitCloseDone = true;
-                // }
-                //
-                // if (opts._isGameOverRetry)
-                // {
-                //     _gameOverRetryCloseDone = true;
-                // }
-
                 UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager
                     .GetActiveScene().name);
                 break;
@@ -236,30 +223,5 @@ public class GStateMachineGame : GStateMachineMono
                 _pauseContinue = true;
                 break;
         }
-    }
-
-    public void HandlePauseContinue(GenericEventOpts opts)
-    {
-        _pauseContinue = true;
-    }
-
-    public void HandlePauseQuit(GenericEventOpts opts)
-    {
-        _pauseQuit = true;
-    }
-
-    public void HandleSkipIntro(GenericEventOpts opts)
-    {
-        ScreenTransition.Instance.Close();
-    }
-
-    public void HandleLoadIntroDone(GenericEventOpts opts)
-    {
-        _loadIntroDone = true;
-    }
-
-    public bool Won()
-    {
-        return _win;
     }
 }
