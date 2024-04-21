@@ -2,6 +2,8 @@ public abstract class StateBase : IState
 {
     public StateMachineMono _context;
     public StateFactory _factory;
+    public bool _done;
+    public bool _ready;
 
     protected StateBase()
     {
@@ -15,7 +17,8 @@ public abstract class StateBase : IState
 
     public virtual void OnEnter()
     {
-        _context.OnGameStateChange(this);
+        _done = false;
+        _ready = false;
     }
 
     public virtual void Update()
@@ -28,5 +31,7 @@ public abstract class StateBase : IState
 
     public virtual void OnExit()
     {
+        _done = false;
+        _ready = false;
     }
 }

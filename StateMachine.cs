@@ -5,7 +5,6 @@ using UnityEngine;
 [Serializable]
 public abstract class StateMachine
 {
-    [SerializeField]
     public StateNode _current;
     public Dictionary<Type, StateNode> _nodes = new();
     public HashSet<ITransition> _anyTransitions = new();
@@ -44,7 +43,11 @@ public abstract class StateMachine
 
         _current?._state?.FixedUpdate();
     }
-
+    
+    public virtual void OnGameStateChange(IState newState)
+    {
+    }
+    
     public void SetState(IState state)
     {
         _current = _nodes[state.GetType()];
@@ -63,6 +66,8 @@ public abstract class StateMachine
         nextState?.OnEnter();
         
         _current = _nodes[state.GetType()];
+        
+        OnGameStateChange(nextState);
     }
 
     ITransition GetTransition()

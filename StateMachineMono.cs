@@ -61,11 +61,6 @@ public abstract class StateMachineMono : MonoBehaviour
         _stateMachine = stateMachine;
         _stateFactory = factory;
     }
-
-    public virtual void OnGameStateChange(StateBase newState)
-    {
-        
-    }
     
     public static IState GetCurrentState() => Instance._stateMachine._current._state;
 
