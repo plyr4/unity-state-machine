@@ -27,18 +27,14 @@ public abstract class StateMachineMono : MonoBehaviour
     protected StateMachine _stateMachine;
     protected StateFactory _stateFactory;
     [SerializeField]
-    [ReadOnlyInspector]
     protected string _currentStateName;
     [SerializeField]
     private bool _showDebug;
     [SerializeField]
-    [ReadOnlyInspector]
     protected string[] _states;
     [SerializeField]
-    [ReadOnlyInspector]
     protected string[] _transitions;
-    [SerializeField]
-    public GenericEvent _onStateChangeEvent;
+
     public virtual void Start()
     {
     }
@@ -64,6 +60,11 @@ public abstract class StateMachineMono : MonoBehaviour
     {
         _stateMachine = stateMachine;
         _stateFactory = factory;
+    }
+
+    public virtual void OnGameStateChange(StateBase newState)
+    {
+        
     }
     
     public static IState GetCurrentState() => Instance._stateMachine._current._state;
