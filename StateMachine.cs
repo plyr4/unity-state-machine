@@ -44,7 +44,7 @@ public abstract class StateMachine
         _current?._state?.FixedUpdate();
     }
     
-    public virtual void OnGameStateChange(IState newState)
+    public virtual void OnGameStateChange(IState previousState, IState newState)
     {
     }
     
@@ -67,7 +67,7 @@ public abstract class StateMachine
         
         _current = _nodes[state.GetType()];
         
-        OnGameStateChange(nextState);
+        OnGameStateChange(previousState, nextState);
     }
 
     ITransition GetTransition()
